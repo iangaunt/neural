@@ -1,3 +1,3 @@
-# iangaunt/sdl-template
+# iangaunt/neural
 
-A template for SDL projects.
+A workspace for building small neural networks. Primarily built in C (genann) and C++ (creating training data with SDL drawings).
