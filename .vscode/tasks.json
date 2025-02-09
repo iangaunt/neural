@@ -3,7 +3,32 @@
 	"tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++.exe build active file",
+            "label": "C: gcc.exe build active file",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+
+            "args": [
+                "-fdiagnostics-color=always",
+                "-I${workspaceFolder}/include",
+                "-g",
+
+                "${workspaceFolder}/genann/*.c",
+                
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            
+            "problemMatcher": [ "$gcc" ],
+            "group": "build",
+            "detail": "compiler: C:\\msys64\\ucrt64\\bin\\gcc.exe"
+        },
+
+        {
+            "type": "process",
+            "label": "C++: g++.exe build active file",
             "command": "C:/msys64/ucrt64/bin/g++.exe",
 
             "args": [
@@ -11,7 +36,6 @@
                 "-std=c++17",
                 "-I${workspaceFolder}/include",
                 "-L${workspaceFolder}/lib",
-
 
                 "${workspaceFolder}/main.cpp",
 
@@ -27,16 +51,9 @@
                 "cwd": "${workspaceFolder}"
             },
 
-            "problemMatcher": [
-                "$gcc"
-            ],
-            
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-
+            "problemMatcher": [ "$gcc" ],
+            "group": "build",
             "detail": "compiler: C:/msys64/mingw64/bin/g++.exe"
-        }
+        },
     ]
 }
